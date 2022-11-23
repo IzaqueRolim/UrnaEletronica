@@ -1,0 +1,141 @@
+body{
+    margin:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-urna{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.urna{
+    background-color: #dbd5c9;
+    padding: 30px;
+    display: flex;
+}
+.tela{
+    width: 500px;
+    height: 320px;
+    background-color:#E8E8E8;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column;
+    
+}
+.d1{
+    flex:1;
+    display: flex;
+}
+.oculto{
+    display: none;
+}
+.d1-1,.d1-2,.d1-3{
+    height: 50px;
+    display: flex;
+    align-items: center;
+   
+}
+.d1-2{
+    justify-content: center;
+    font-size: 25px;
+}
+.d1-4{
+    flex:1;
+    line-height: 2;
+}
+.d1-left{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.oculto{
+    display:none;
+}
+.voto-branco{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+.oculto{
+    display:none;
+}
+.voto-branco>.d1-3{
+    font-size:45px;
+    margin-top:5vh;
+    justify-content: center;
+}
+.d1-right{
+    width: 105px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+.oculto{
+    display: none;
+}
+.d1-right>.small{
+    width: 60%;
+}
+.d1-right>.normal{
+    width: 85%;
+}
+.d2{
+    height: 50px;
+    font-size: 14px;
+    border-top: 2px solid black;
+    padding-left: 10px;
+}
+.numero{
+    margin-right: 5px;
+    width: 30px;
+    height: 40px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.teclado{
+    margin-left: 30px;
+    background-color: #403A3A;
+}
+.teclado-linha{
+    display: flex;
+    justify-content: center;
+}
+.teclado-botao{
+    width: 70px;
+    height: 40px;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor:pointer;
+    box-shadow: 3px 3px 0 #555;
+}
+.botao-branco{
+    background-color: white;
+    color: black;
+    font-size: 15px;
+}
+.botao-corrige{
+    background-color: #F09046;
+    color: black;
+    font-size: 15px;
+}
+.botao-confirma{
+    background-color: #48C079;
+    color: black;
+    font-size: 15px;
+    width: 90px;
+}
