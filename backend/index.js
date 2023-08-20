@@ -1,15 +1,15 @@
-const express = require("express")
-const app = express() 
+const express   = require("express")
+const app       = express() 
 
-const database   = require("./db")
-const Candidato  = require("./candidato")
+const database  = require("./config/db")
+const Candidato = require("./src/models/candidato")
 
-const multer     = require("multer")
-const storage    = require("./multerConfig")
+const multer    = require("multer")
+const storage   = require("./config/multerConfig")
 
-const cors = require("cors")
+const cors      = require("cors")
 
-const port = 5050
+const port      = 5050
 
 const upload = multer({storage: storage})
 
