@@ -43,7 +43,8 @@ async function criarNovoCandidato(){
         return res.status(200).send({mensage:"Cadastrado com sucesso :)"});
     }
     catch(error){
-        return res.status(400).send({mensage:error.message})
+        console.log(error);
+        return res.status(500).send({mensage:error.message})
     }
     
 }
