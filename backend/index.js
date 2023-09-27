@@ -8,8 +8,6 @@ const port      = 5050
 const CandidatoController = require('./src/controllers/candidatoController');
 const candidatoController = new CandidatoController();
 
-
-
 //para poder usar o req.body
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
@@ -23,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 // Use o roteador do controlador
-app.use('/candidatos/', candidatoController.router);
+app.use('/candidato/', candidatoController.router);
 
 app.listen(port,async()=>{
     await database.sync();

@@ -12,35 +12,34 @@ class CandidatoController {
     }
   
     initializeRoutes() {
-       
+        // Obter os candidatos de cada secao
         this.router.get("/:secao",this.getCandidatos.bind(this));
-
         //cadastrar novo candidato
         this.router.post("/create",this.criarNovoCandidato.bind(this));
-
+        // Computar voto
+        this.router.patch("/computeVote",this.computarVotos.bind(this));
         // Definir imagem do candidato
         this.router.post("/upload/:numero",this.upload.single("file"),this.salvarImagemCandidato.bind(this))
-
         // Definir imagem do vice
         this.router.post("/upload/vice/:numero",this.upload.single("file"),this.salvarImagemVice.bind(this))
 
-        ///atualizar votos
-        this.router.patch("/patch",this.atualizarVotos.bind(this));
-      // Adicione mais rotas conforme necessário
     }
   
     async getCandidatos(req,res){
         try{
+            if(!req.params.secao){
+                return res.status(400).send({message:"Informe a secao!"})
+            }
             const candidatos = await this.Candidato.findAll({
             where:{
                 secao:req.params.secao
             }
             });
         
-            return res.send(candidatos);
+            return res.status(302).send(candidatos);
         }
         catch(error){
-            return res.status.send({message:error.message});
+            return res.status(500).send({message:error.message});
         }
     }
 
@@ -66,7 +65,7 @@ class CandidatoController {
         }
     }
 
-    async atualizarVotos(req,res){
+    async computarVotos(req,res){
         try{
             const candidato = await this.Candidato.findOne({
                 where:{
@@ -121,7 +120,7 @@ class CandidatoController {
         catch(error){
             return res.status(500).send({message:error.message});
         }
-        }
+    }
   }
   
 module.exports = CandidatoController;
